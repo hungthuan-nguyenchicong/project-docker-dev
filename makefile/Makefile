@@ -8,6 +8,8 @@ PATH_PROJECT = $(shell dirname $(PWD))/project-test
 include nginx/nginx.mk
 #php
 include php/php.mk
+#mariadb
+include mariadb/mariadb.mk
 
 # Mặc định khi gõ 'make' sẽ hiện hướng dẫn
 .DEFAULT_GOAL :=help
@@ -17,6 +19,7 @@ help:
 	@echo "-> make pull-alpine - Pull image alpine"
 	@echo "-> make nginx-help - Nginx help"
 	@echo "-> make php-help - Php help"
+	@echo "-> make mariadb-help - Maraiadb help"
 pull-alpine:
 	docker pull $(IMAGE_ALPINE)
 	docker images
