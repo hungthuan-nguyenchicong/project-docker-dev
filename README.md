@@ -1,1 +1,2 @@
-# project-docker-dev
+# apk add
+apk add make
