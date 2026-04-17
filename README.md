@@ -22,3 +22,6 @@ build:
 cleanup:
 	@echo "Dang don dep file tam..."
 ```
+docker network ls
+
+docker network inspect db-network
