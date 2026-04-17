@@ -25,3 +25,17 @@ cleanup:
 docker network ls
 
 docker network inspect db-network
+
+--restart always \
+
+php -d memory_limit=512M /usr/local/bin/wp core download --path=wp-app
+
+--network db-network \
+
+--network host
+
+--allow-root
+
+docker exec -u root $(CONTAINER_NAME) sh -c "\
+
+wp server --host=0.0.0.0 --port=8080
