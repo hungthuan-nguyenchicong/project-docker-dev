@@ -39,3 +39,5 @@ php -d memory_limit=512M /usr/local/bin/wp core download --path=wp-app
 docker exec -u root $(CONTAINER_NAME) sh -c "\
 
 wp server --host=0.0.0.0 --port=8080
+
+docker exec -it adminer-alpine-ncc ps aux

@@ -2,6 +2,7 @@
 
 # Định nghĩa biến gốc
 IMAGE_ALPINE = alpine:3.23.3
+ALPINE_IMAGE = alpine:3.23.3
 PATH_PROJECT = $(shell dirname $(PWD))/project-test
 
 #nginx
@@ -12,6 +13,8 @@ include php/php.mk
 include mariadb/mariadb.mk
 #wp-cli
 include wp-cli/wp-cli.mk
+#adminer
+include adminer/adminer.mk
 
 # Mặc định khi gõ 'make' sẽ hiện hướng dẫn
 .DEFAULT_GOAL :=help
@@ -22,7 +25,9 @@ help:
 	@echo "-> make nginx-help - Nginx help"
 	@echo "-> make php-help - Php help"
 	@echo "-> make mariadb-help - Maraiadb help"
-	@choe '-> make wp-cli-help - wp-cli-help'
+	@echo '-> make wp-cli-help - wp-cli-help'
+	@echo "make adminer-help - adminer-help"
+
 pull-alpine:
 	docker pull $(IMAGE_ALPINE)
 	docker images

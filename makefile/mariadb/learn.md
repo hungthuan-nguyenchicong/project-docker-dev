@@ -31,3 +31,4 @@ docker update --restart always nginx-alpine-ncc
 # Sau đó khởi động lại tất cả
 docker start mariadb-alpine-ncc php-alpine-ncc nginx-alpine-ncc
 
+exec mariadbd --user=mysql --console
